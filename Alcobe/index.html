@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="scripts/popup.js"></script>
+    <title>Alcobe</title>
+</head>
+<body>
+    <header class="bg-dark">
+        <div class="container">
+            <nav class="primary-nav">
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#routes">Routes</a></li>
+                <li><a href="#images">Images</a></li>
+            </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+    <section class="hero bg-dark">
+            <h1>Alcobe</h1>
+            <h2 class="heading-subtitle">Enjoy a night in the wilderness</h2>
+            <img src="assets/site-images/hero.jpg">
+    </section>
+
+    <section class="about bg-light" id="about">
+            <div class="cards">
+                <div class="card ">
+                    <div class="front">
+                        <p class="title">Landscapes</p>
+                        <img src="assets/icons/mountain.png" class="img img--mountain">
+                    </div>
+                    <div class="back bg-primary">
+                        <p class="title">Landscapes</p>
+                        <p>
+                            <span>There are plenty of <b>beautiful landscapes on sight</b></span>
+                            <span>Waking up while seeing them is known to <b>open your mind</b></span>
+                            <span>Mount Fuji, Daintree Rainforest and more await you </span>
+                        </p>
+                        <img src="assets/icons/mountain-white.png" class="img">
+                    </div>
+                </div>
+                <div class="card bg-dark">
+                    <div class="front">
+                        <p class="title">Nighttime</p>
+                        <img src="assets/icons/moon-line-white.png" class="img">
+                    </div>
+                    <div class="back">
+                        <p class="title">Nighttime</p>
+                        <p>
+                            <span>Spend the <b>night</b> at the top of a mountain under a blanket of stars.</span>
+                            <span>Relax beside a river watching feeling the <b>tranquility</b> of the woods  .</span>
+                            <span><b>Plaree Mountains</b> and <b>Deany Hillside</b> are an awesome match for you.</span>
+                        </p>
+                        <img src="assets/icons/moon-line-white.png">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="front">
+                        <p class="title">Guides</p>
+                        <img src="assets/icons/compass.png" class="img">
+                    </div>
+                    <div class="back bg-primary">
+                        <p class="title">Guides</p>
+                        <p>
+                            <span>Our guides know perfectly our hiking routes and will help you <b>with any problem</b></span>
+                            <span>You can trust them <b>without worrying</b> about anything while hiking</span>
+                            <span>A meeting with the guides can be scheduled before arriving to the route</span>
+                        </p>
+                        <img src="assets/icons/compass-white.png">
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="routes" id="routes">
+        <div class="a-center">
+                <h2 class="section-title bg-dark">Different destinations</h2>
+                <div class="cards ">
+                    <div class="card">
+                        <img src="assets/site-images/PlareeMountains.jpg">
+                        <p class="name">Plaree Mountains</p>
+                        <div class="info">
+                            <div class="keys">
+                                <p>8 people</p>
+                                <p>Provided tents</p>
+                                <p>Dense forest</p>
+                                <p>Easy</p>
+                            </div>
+                            <div>
+                                <p class="summary">Wander through  the woods and sleep at these relaxing plains under the night sky</p>
+                                <button class="btn-book-now" onclick="togglePopup('plaree')">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/site-images/DeanyHillside.jpg">
+                        <p class="name">Deany Hillside</p>
+                        <div class="info">
+                            <div class="keys">
+                                <p>4 people</p>
+                                <p>Provided tents</p>
+                                <p>Mesmerizing hills</p>
+                                <p>Medium</p>
+                            </div>
+                            <div>
+                                <p class="summary">Enjoy a relaxing hike followed by quality time surrounded by hills the nighttime</p>
+                                <button class="btn-book-now" onclick="togglePopup('deany')">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/site-images/ShrineCabin.jpg" alt="Cabin inside the forest">
+                        <p class="name">Shrine's Cabin</p>
+                        <div class="info">
+                            <div class="keys">
+                                <p>2 people</p>
+                                <p>Intimacy</p>
+                                <p>Lakes</p>
+                                <p>Easy</p>
+                            </div>
+                            <div>
+                                <p class="summary">This cabin is the perfect destination for couples, it’s located near a beautiful lake</p>
+                                <button class="btn-book-now" onclick="togglePopup('cabin')">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="overlay" class="overlay invisible"></div>
+            
+            
+            <div id="plaree-popup" class="popup invisible">
+                <div class="container">
+                    <nav class="popup-nav">
+                    <ul class="nav-list">
+                        <li><a id="plaree-about-btn" class="popup-btn" onclick="toggleActive('plaree-about')">About</a></li>
+                        <li><a id="plaree-testimonials-btn" class="popup-btn" onclick="toggleActive('plaree-testimonials')">Testimonials</a></li>
+                        <li><a id="plaree-booking-btn" class="popup-btn" onclick="toggleActive('plaree-booking')">Booking </a></li>
+                    </ul>
+                    </nav>
+                    <img src="assets/icons/remove-cross.png" class="cross" onclick="closePopup('plaree')">
+                    <h2 class="name">Plaree Mountains</h2> 
+
+                    <div id="plaree-about" class="popup-page invisible">
+                        <div class="about-container">
+                            <div class="info">
+                                <p>8 people maximum</p>
+                                <p>Sleep in provided tents</p>
+                                <p>Enjoy a dense forest</p>
+                                <p>Easy hiking trail</p>
+                                <p>$35 a night</p>
+                            </div>
+                            <div>
+                                <img src="assets/site-images/PlareeMountains.jpg" alt="Foggy mountains">
+                                <button class="btn-book-now btn" onclick="toggleActive('plaree-booking')">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="plaree-testimonials" class="popup-page invisible">
+                        <div class="testimonials-container">
+                            <div class="testimonial">
+                                <figure class="shape">
+                                    <img src="assets/site-images/KylieDoe.jpg" class="img">
+                                    <figcaption class="caption">Kylie Doe</figcaption>
+                                </figure>
+                                <div class="info">
+                                    <p class="title">Plaree mountains opened my mind</p>
+                                    <p class="opinion">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. In tenetur voluptates soluta consequuntur
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="testimonial">
+                                <figure class="shape">
+                                    <img src="assets/site-images/JuliaSmith.jpg" class="img">
+                                    <figcaption class="caption">Julia Smith</figcaption>
+                                </figure>
+                                <div class="info">
+                                    <p class="title">HAD AN AMAZING EXPERIENCE</p>
+                                    <p class="opinion">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. In tenetur voluptates soluta consequuntur
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="testimonial">
+                                <figure class="shape">
+                                    <img src="assets/site-images/JaePeck.jpg" class="img">
+                                    <figcaption class="caption">Jae Peck</figcaption>
+                                </figure>
+                                <div class="info">
+                                    <p class="title">I really loved Shyral Bridge</p>
+                                    <p class="opinion">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. In tenetur voluptates soluta consequuntur
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="plaree-booking" class="popup-page invisible">
+                        <div class="booking-container">
+                           <form method="get" action="#home">
+                                <p>
+                                    <p class="label">First Name</p>
+                                    <input type="text" name="firstname" placeholder="Write your first name">
+                                </p>
+                                <p>
+                                    <p class="label">Last name</p>
+                                    <input type="text" name="lastname" placeholder="Write your last name">
+                                </p>
+                                <p>
+                                    <p class="label">Email</p>
+                                    <input type="text" name="email" placeholder="Write your email">
+                                </p>
+                                <p>
+                                    <p class="label">Tell us anything we need to know</p>
+                                    <textarea name="message" placeholder="A piece of your mind"></textarea>
+                                </p>
+                                <button class="btn-book-now btn">Book Now</button>
+                           </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div id="deany-popup" class="popup invisible" >
+                <div class="container">
+                    <nav class="popup-nav">
+                    <ul class="nav-list">
+                        <li><a id="deany-about-btn" class="popup-btn" onclick="toggleActive('deany-about')">About</a></li>
+                        <li><a id="deany-testimonials-btn" class="popup-btn" onclick="toggleActive('deany-testimonials')">Testimonials</a></li>
+                        <li><a id="deany-booking-btn" class="popup-btn" onclick="toggleActive('deany-booking')">Booking </a></li>
+                    </ul>
+                    </nav>
+                    <img src="assets/icons/remove-cross.png" class="cross" onclick="closePopup('deany')">
+                    <h2 class="name">Deany Hillside</h2> 
+
+                    <div id="deany-about" class="popup-page invisible">
+                        <div class="about-container">
+                            <div class="info">
+                                <p>4 people maximum</p>
+                                <p>Sleep in provided tents</p>
+                                <p>Enjoy a dense forest</p>
+                                <p>Medium difficulty</p>
+                                <p>$45 a night</p>
+                            </div>
+                            <div>
+                                <img src="assets/site-images/DeanyHillside.jpg" alt="Tall cliff">
+                                <button class="btn-book-now btn" onclick="toggleActive('deany-booking')">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="deany-testimonials" class="popup-page invisible">
+                        <div class="testimonials-container">
+                            <div class="testimonial">
+                                <figure class="shape">
+                                    <img src="assets/site-images/KylieDoe.jpg" class="img">
+                                    <figcaption class="caption">Kylie Doe</figcaption>
+                                </figure>
+                                <div class="info">
+                                    <p class="title">Plaree mountains opened my mind</p>
+                                    <p class="opinion">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. In tenetur voluptates soluta consequuntur
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="testimonial">
+                                <figure class="shape">
+                                    <img src="assets/site-images/JuliaSmith.jpg" class="img">
+                                    <figcaption class="caption">Julia Smith</figcaption>
+                                </figure>
+                                <div class="info">
+                                    <p class="title">HAD AN AMAZING EXPERIENCE</p>
+                                    <p class="opinion">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. In tenetur voluptates soluta consequuntur
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="testimonial">
+                                <figure class="shape">
+                                    <img src="assets/site-images/JaePeck.jpg" class="img">
+                                    <figcaption class="caption">Jae Peck</figcaption>
+                                </figure>
+                                <div class="info">
+                                    <p class="title">I really loved Shyral Bridge</p>
+                                    <p class="opinion">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. In tenetur voluptates soluta consequuntur
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="deany-booking" class="popup-page invisible">
+                        <div class="booking-container">
+                           <form method="get" action="#home">
+                                <p>
+                                    <p class="label">First Name</p>
+                                    <input type="text" name="firstname" placeholder="Write your first name">
+                                </p>
+                                <p>
+                                    <p class="label">Last name</p>
+                                    <input type="text" name="lastname" placeholder="Write your last name">
+                                </p>
+                                <p>
+                                    <p class="label">Email</p>
+                                    <input type="text" name="email" placeholder="Write your email">
+                                </p>
+                                <p>
+                                    <p class="label">Tell us anything we need to know</p>
+                                    <textarea name="message" placeholder="A piece of your mind"></textarea>
+                                </p>
+                                <button class="btn-book-now btn">Book Now</button>
+                           </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div id="cabin-popup" class="popup invisible" >
+                <div class="container">
+                    <nav class="popup-nav">
+                    <ul class="nav-list">
+                        <li><a id="cabin-about-btn" class="popup-btn" onclick="toggleActive('cabin-about')">About</a></li>
+                        <li><a id="cabin-testimonials-btn" class="popup-btn" onclick="toggleActive('cabin-testimonials')">Testimonials</a></li>
+                        <li><a id="cabin-booking-btn" class="popup-btn" onclick="toggleActive('cabin-booking')">Booking </a></li>
+                    </ul>
+                    </nav>
+                    <img src="assets/icons/remove-cross.png" class="cross" onclick="closePopup('deany')">
+                    <h2 class="name">Shrine's Cabin</h2> 
+
+                    <div id="cabin-about" class="popup-page invisible">
+                        <div class="about-container">
+                            <div class="info">
+                                <p>2 people maximum</p>
+                                <p>Sleep in the cabin</p>
+                                <p>Enjoy a night in the woods </p>
+                                <p>Easy hiking trail</p>
+                                <p>$55 a night</p>
+                            </div>
+                            <div>
+                                <img src="assets/site-images/ShrineCabin.jpg" alt="Tall cliff">
+                                <button class="btn-book-now btn" onclick="toggleActive('cabin-booking')">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cabin-testimonials" class="popup-page invisible">
+                        <div class="testimonials-container">
+                            <div class="testimonial">
+                                <figure class="shape">
+                                    <img src="assets/site-images/KylieDoe.jpg" class="img">
+                                    <figcaption class="caption">Kylie Doe</figcaption>
+                                </figure>
+                                <div class="info">
+                                    <p class="title">Plaree mountains opened my mind</p>
+                                    <p class="opinion">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. In tenetur voluptates soluta consequuntur
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="testimonial">
+                                <figure class="shape">
+                                    <img src="assets/site-images/JuliaSmith.jpg" class="img">
+                                    <figcaption class="caption">Julia Smith</figcaption>
+                                </figure>
+                                <div class="info">
+                                    <p class="title">HAD AN AMAZING EXPERIENCE</p>
+                                    <p class="opinion">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. In tenetur voluptates soluta consequuntur
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="testimonial">
+                                <figure class="shape">
+                                    <img src="assets/site-images/JaePeck.jpg" class="img">
+                                    <figcaption class="caption">Jae Peck</figcaption>
+                                </figure>
+                                <div class="info">
+                                    <p class="title">I really loved Shyral Bridge</p>
+                                    <p class="opinion">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. In tenetur voluptates soluta consequuntur
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cabin-booking" class="popup-page invisible">
+                        <div class="booking-container">
+                           <form method="get" action="#home">
+                                <p>
+                                    <p class="label">First Name</p>
+                                    <input type="text" name="firstname" placeholder="Write your first name">
+                                </p>
+                                <p>
+                                    <p class="label">Last name</p>
+                                    <input type="text" name="lastname" placeholder="Write your last name">
+                                </p>
+                                <p>
+                                    <p class="label">Email</p>
+                                    <input type="text" name="email" placeholder="Write your email">
+                                </p>
+                                <p>
+                                    <p class="label">Tell us anything we need to know</p>
+                                    <textarea name="message" placeholder="A piece of your mind"></textarea>
+                                </p>
+                                <button class="btn-book-now btn">Book Now</button>
+                           </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="images a-center" id="images">
+        <h2 class="section-title bg-dark">These are the beautiful places that we'll explore</h2>
+        <div class="flex">       
+            <div class="composition">
+                <div class="img-container medium">
+                    <img src="assets/site-images/bridge.jpg" alt="Long bridge">
+                    <p class="name">Shyral Bridge</p>
+                </div>
+                <div class="img-container wide">
+                    <img src="assets/site-images/RainbowCascade.jpg" alt="Rainbow Cascade">
+                    <p class="name">Rainbow Cascade</p>
+                </div>
+                <div class="img-container medium">
+                    <img src="assets/site-images/DeShireCabin.jpg" alt="Window to a lake">
+                    <p class="name">DeShire Cabin</p>
+                </div>
+                <div class="img-container small">
+                    <img src="assets/site-images/Borealis.jpg" alt="Aurora Borealis">
+                    <p class="name">Aurora Borealis</p>
+                </div>
+                <div class="img-container small">
+                    <img src="assets/site-images/DeShireCabin2.jpg" alt="Cabin near a lake">
+                    <p class="name">DeShire Cabin</p>
+                </div>
+                <div class="img-container long">
+                    <img src="assets/site-images/HillburnPlains.jpg" alt="Mountain top plains">
+                    <p class="name">Hillburn Plains</p>
+                </div>
+            </div>                
+        </div>
+    </section>
+</body>
+</html>

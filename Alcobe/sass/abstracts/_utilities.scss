@@ -1,0 +1,41 @@
+.bg-primary {
+    --bg: var(--clr-primary-400);
+    --fg: var(--clr-neutral-800);
+    --accent: var(--clr-neutral-100);
+    --bbg: var(--clr-primary-400);
+    --bbg-dark: var(--clr-primary-500);
+}
+
+.bg-dark {
+    --bg: var(--clr-neutral-800);
+    --fg: var(--clr-primary-400);
+    --accent: var(--clr-neutral-100);
+    --bbg: var(--clr-neutral-800);
+    --bbg-dark: var(--clr-neutral-800);
+}
+
+.bg-light {
+    --bg: var(--clr-neutral-100);
+    --fg: var(--clr-neutral-800);
+    --accent: var(--clr-primary-400);
+    --bbg: var(--clr-primary-400);
+    --bbg-dark: var(--clr-primary-500);
+}
+
+.a-center {
+    text-align: center;
+}
+
+.blur {
+    filter: blur(10px);
+}
+
+.invisible {
+    opacity: 0;
+    visibility: hidden;    
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}

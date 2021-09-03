@@ -1,0 +1,11 @@
+.btn {
+    &-book-now {
+        cursor: pointer;
+        margin-top: 2rem;
+        font-size: var(--fs-300);
+        color: var(--clr-neutral-100);
+        background: var(--clr-primary-400);
+        border: none;
+        padding: 1rem 2rem;
+    }
+}
